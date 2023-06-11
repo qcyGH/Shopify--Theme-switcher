@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js {% unless settings.switching_theme_enable %} {{ settings.forced_theme }}{% endunless %}" lang="{{ request.locale.iso_code }}">
+  <head>
+
+
+    // required for theme switcher
+    {% if settings.switching_theme_enable %}
+      {{ 'theme-switcher.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'theme-switcher.js' | asset_url }}"></script>
+    {% endif %}
+    // required for theme switcher
+
+    {% style %}
+
+      html.dark-theme {
+        --gradient-base-background-1: {% if settings.dark_theme_gradient_color != blank %}{{ settings.dark_theme_gradient_color }}{% else %}{{ settings.colors_background_1 }}{% endif %};
+        --color-base-accent-1: rgb({{ settings.dark_theme_accent_color.red }}, {{ settings.dark_theme_accent_color.green }}, {{ settings.dark_theme_accent_color.blue }});
+        --button-gradient: linear-gradient(257.52deg,hsla({{ settings.dark_theme_accent_color.hue }}, 90%, 54%, 0.5) 12.99%,hsla({{ settings.dark_theme_accent_color.hue }}, 90%, 54%, 0.25) 127.64%), hsl({{ settings.dark_theme_accent_color.hue }}, {{ settings.dark_theme_accent_color.lightness }}%, 76%);
+      }
+
+    {% endstyle %}
+
+  </head>
+
+</html>

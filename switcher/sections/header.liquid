@@ -1,0 +1,67 @@
+<div class="header-wrapper">
+  <div class="container">
+    <div class="row">
+      <header class="header header--middle-left {% if section.settings.menu != blank %} header--has-menu{% endif %} header-homemaid">
+        {%- if section.settings.menu != blank -%}
+          <header-drawer data-breakpoint="tablet">
+            <details id="Details-menu-drawer-container" class="menu-drawer-container">
+              <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
+                <div class="menu-drawer__inner-container">
+                  <div class="menu-drawer__navigation-container">
+                    <div class="menu-drawer__utility-links">
+
+                    // you need past this to your "header.liquid"
+                      {%- if settings.switching_theme_enable -%}
+                        <div class="switch-theme__wrapper switch-theme__wrapper--mobile">
+                          <button type="button" class="btn switch-theme__button">
+                            <span class="theme-icon__light">
+                              {% render 'icon-sun' %}
+                            </span>
+                            <span class="theme-icon__dark">
+                              {% render 'icon-moon' %}
+                            </span>
+                            <span class="switch-theme__text">Change scheme</span>
+                          </button>
+                          {% if settings.switching_theme_show_reset_button %}
+                            <button type="button" class="btn switch-theme__reset" tabindex="0" data-bs-toggle="popover" data-bs-custom-class="variant-selector--popover" data-bs-trigger="hover focus" data-bs-placement="right" data-bs-content="Reset user theme and use os color scheme"></button>
+                          {% endif %}
+                        </div>
+                      {%- endif -%}
+                    // you need past this to your "header.liquid"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </header-drawer>
+        {%- endif -%}
+
+        <div class="header__icons">
+
+          // you need past this to your "header.liquid"
+          {%- if settings.switching_theme_enable -%}
+            <div class="switch-theme__wrapper {% if section.settings.menu != blank %} small-hide{% endif %}">
+              <button type="button" class="btn switch-theme__button">
+                <span class="theme-icon__light">
+                  {% render 'icon-sun' %}
+                </span>
+                <span class="theme-icon__dark">
+                  {% render 'icon-moon' %}
+                </span>
+              </button>
+              {% if settings.switching_theme_show_reset_button %}
+                <button type="button" class="btn switch-theme__reset" tabindex="0" data-bs-toggle="popover" data-bs-custom-class="variant-selector--popover" data-bs-trigger="hover focus" data-bs-placement="right" data-bs-content="Reset user theme and use os color scheme"></button>
+                <script>
+                  const switcherPopoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+                  const switcherPopoverList = [...switcherPopoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+                </script>
+              {% endif %}
+            </div>
+          {%- endif -%}
+          // you need past this to your "header.liquid"
+
+        </div>
+      </header>
+    </div>
+  </div>
+</div>

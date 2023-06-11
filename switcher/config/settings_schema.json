@@ -1,0 +1,67 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Your theme name",
+    "theme_version": "1.0.0",
+    "theme_author": "Qcy",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  // theme switcher settings
+  {
+    "name": "Switching theme",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "switching_theme_enable",
+        "default": true,
+        "label": "Enable switching theme"
+      },
+      {
+        "type": "select",
+        "id": "forced_theme",
+        "default": "light-theme",
+        "label": "Forced theme for site.",
+        "info": "Works only when theme switching is disabled.",
+        "options": [
+          {
+            "value": "light-theme",
+            "label": "Light"
+          },
+          {
+            "value": "dark-theme",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "switching_theme_show_reset_button",
+        "default": false,
+        "label": "Show reset button",
+        "info": "If the user manually changes the scheme, it`s setting write to localStorage. Reset button clear this setting."
+      },
+      {
+        "type": "header",
+        "content": "Optional settings"
+      },
+      {
+        "type": "color",
+        "id": "dark_theme_accent_color",
+        "label": "Accent color for dark theme.",
+        "info": "If not pick, the standard accent color of the light theme will be used."
+      },
+      {
+        "type": "color_background",
+        "id": "dark_theme_gradient_color",
+        "label": "Gradient color for dark theme.",
+        "info": "If not pick, the standard gradient color of the light theme will be used."
+      }
+    ]
+  }
+  // other settings
+]
